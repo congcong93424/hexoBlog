@@ -67,6 +67,9 @@
     {% endif %}
 
   </div>
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+  </div>
 
   {% include '_scripts/vendors.swig' %}
   {% include '_scripts/commons.swig' %}
@@ -88,5 +91,6 @@
   {% include '_third-party/mathjax.swig' %}
   {% include '_third-party/scroll-cookie.swig' %}
   {% include '_third-party/exturl.swig' %}
+  <script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
 </body>
 </html>
