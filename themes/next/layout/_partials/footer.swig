@@ -22,9 +22,8 @@
   {% endif %}
 </div>
 <div class="powered-by">
-  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  <span id="busuanzi_container_site_uv">
     本站访客数:<span id="busuanzi_value_site_uv"></span>
-    本站点击数:<span id="busuanzi_value_site_pv"></span>
   </span>
 </div>
 {% if theme.footer.powered %}
