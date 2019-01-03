@@ -18,6 +18,7 @@ $ cd blog  切换到blog目录
 $ npm install 安装所需的依赖
 $ hexo server  本地运行hexo项目 可用hexo s --debug带调试的简写模式，方便看到错误信息
 ```
+<!--more-->
 新建完成后，指定文件夹的目录如下：
 ```
 ├── _config.yml
