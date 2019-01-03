@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: dream
+title: hexo-blog
 subtitle:
 description:
 keywords:
 author: jian Cong
-language:
+language: zh-Hans
 timezone:
 
 # URL
