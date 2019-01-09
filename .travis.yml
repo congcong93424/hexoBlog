@@ -1,0 +1,26 @@
+language: node_js
+node_js: stable
+
+install:
+  - npm install
+script:
+  - hexo g
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "congcong93424"
+  - git config user.email "congcong@liveu.xin"
+  - git add .
+  - git commit -m "add/edit"
+  - git push --force --quiet "https://${guthub_token}@${GH_REF}" master:master
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - node_modules
+
+env:
+global:
+  GH_REF: github.com/congcong93424/congcong93424.github.io
