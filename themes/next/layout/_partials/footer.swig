@@ -46,9 +46,7 @@
 #}</div>
 {% endif %}
 
-
-<i class="fa fa-user"></i>
-<span id="busuanzi_container_site_uv"> 你是来访的第 <span id="busuanzi_value_site_uv"></span> 位小伙伴</span>
 <span class="post-meta-divider">|</span>
 <i class="fa fa-eye"></i>
-<span id="busuanzi_container_site_pv"> 总阅读数 <span id="busuanzi_value_site_pv"></span> 次</span>
+<span id="busuanzi_container_site_uv"> 你是来访的第 <span id="busuanzi_value_site_uv"></span> 位小伙伴</span>
+<span class="post-meta-divider">|</span>
