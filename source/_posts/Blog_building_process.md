@@ -3,6 +3,7 @@ title: 记录Window搭建hexo博客过程
 tags: hexo
 categories: 博客 
 ---
+***
 **缘起老大要我搭建一个博客用于分享文章，遂有了下面的故事。。。**
 
 #### <font color=red># 背景</font>
@@ -43,7 +44,7 @@ git clone https://github.com/iissnan/hexo-theme-next themes/next themes/next
 打开站点配置文件 找到themes: 修改为 themes: next
 打开主题配置文件 找到Schemes: 选择不同的样式主题。
 
-3.新建分类
+**3.新建分类**
 在项目根目录下输入如下命令新建分类文件
 ```
 hexo new page catgegories
@@ -92,10 +93,10 @@ $ git push -u origin master
 至此你已经把本地代码与github仓库关联。
 
 #### <font color=red># 建立github单页项目</font>
-在github主页新建仓库，name命名格式为你的GitHub的name.github.io  如 congcong.github.io
+在github主页新建仓库，name命名格式为你的GitHub的name.github.io  如 congcong93424.github.io
 
 
-#### <font color=red># 本地hero一键部署功能</font>
+#### <font color=red># 本地hexo一键部署功能</font>
 npm安装hexo-deployer-git
 ```
 $ npm install hexo-deployer-git --save
@@ -117,11 +118,12 @@ hexo deploy   部署网站。
 ```
 最后等待一两分钟，在浏览器地址输https://congcong93424.github.io即可看到你自己的博客啦。
 
-#### <font color=red># 自动化部署到github Pages</font>
-*此功能与上者本地一键部署功能选一即可*
+#### <font color=red># Travis CI 自动化部署到github Pages</font>
+*此功能与上者本地一键部署功能选一即可,区别在于本地一键部署在本地更改后通过Hexo d 命令一键部署到github pages上。*
+*自动化部署原理是将本地与版本库关联，在每次执行git push后自动执行一系列操作将更新得内容部署到github pages上去*
 **Travis CI是一个持续集成的工具，它绑定Github上面的项目，只要有新的代码就会自动抓取。然后提供一个运行环境，执行测试，完成构建，还能部署到服务器**
-*持续集成指的是只要代码有变更，就自动运行构建和测试，反馈运行结果。确保符合预期以后，再将新代码"集成"到主干。*  
-*持续集成的好处在于，每次代码的小幅变更，就能看到运行结果，从而不断累积小的变更，而不是在开发周期结束时，一下子合并一大块代码。*
+**持续集成指的是只要代码有变更，就自动运行构建和测试，反馈运行结果。确保符合预期以后，再将新代码"集成"到主干。**  
+**持续集成的好处在于，每次代码的小幅变更，就能看到运行结果，从而不断累积小的变更，而不是在开发周期结束时，一下子合并一大块代码。**
 
 **1.登录 GitHub: Settings--> Developer settings--> Personal access tokens--> Generate new token --> 勾选第一项**
 **2.进入travis ci官网https://travis-ci.org  github账号授权登陆**
@@ -133,8 +135,10 @@ language: node_js
 node_js: stable
 
 install:
+  - npm install hexo-cli -g
   - npm install
 script:
+  - hexo clean
   - hexo g
 after_script:
   - cd ./public
@@ -143,7 +147,7 @@ after_script:
   - git config user.email "congcong@liveu.xin"
   - git add .
   - git commit -m "add/edit"
-  - git push --force --quiet "https://${guthub_token}@${GH_REF}" master:master
+  - git push -f -q "https://${github_token}@${GH_REF}" master:master
 branches:
   only:
     - master
@@ -153,9 +157,10 @@ cache:
     - node_modules
 
 env:
-global:
-  GH_REF: github.com/congcong93424/congcong93424.github.io
+  global:
+    GH_REF: github.com/congcong93424/congcong93424.github.io.git
 ```
+
 **6.完成上述配置后，hexo和trabvis环境就搭建好了，更新博客后Push到github仓库后，travis就已经开始为我们同步代码了**
 **【小贴士，hexo有很多的插件可以用，上网查找试着装扮你的博客吧。】**
 <!-- <img src="/images/1.png" width="400px" /> -->
