@@ -2,8 +2,10 @@ language: node_js
 node_js: stable
 
 install:
+  - npm install hexo-cli -g
   - npm install
 script:
+  - hexo clean
   - hexo g
 after_script:
   - cd ./public
@@ -12,8 +14,7 @@ after_script:
   - git config user.email "congcong@liveu.xin"
   - git add .
   - git commit -m "add/edit"
-  - git remote add origin master git@github.com:congcong93424/congcong93424.github.io.git
-  - git push origin master
+  - git push -f -q "https://${github_token}@${GH_REF}" master:master
 branches:
   only:
     - master
@@ -21,3 +22,7 @@ branches:
 cache:
   directories:
     - node_modules
+
+env:
+  global:
+    GH_REF: github.com/congcong93424/congcong93424.github.io.git
