@@ -23,6 +23,7 @@ transition 属性是一个简写属性，用于设置四个过渡属性：
     transition-timing-function ： 	规定速度效果的速度曲线(linear->匀速，ease->慢快慢，ease-in->慢速开始，ease-out->慢速结束)。
     transition-delay ：定义过渡效果何时开始。
 ```
+<!--more-->
 4.transform属性：
 ```
 transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。
