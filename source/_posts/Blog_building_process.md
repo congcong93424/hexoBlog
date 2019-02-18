@@ -1,7 +1,7 @@
 ---
 title: 记录Window搭建hexo博客过程
 tags: hexo
-date: 2019-01-03
+date: 2019-01-03 
 categories: 博客 
 ---
 ***
