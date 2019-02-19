@@ -2,7 +2,7 @@
 title: 原生js下拉刷新
 tags: js
 date: 2019-02-19 0:07
-categories: js, 前端
+categories: 前端
 ---
 ***
 ```
