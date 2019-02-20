@@ -16,6 +16,8 @@ categories: 前端
 
 **4.在clientHeight跟scrollTop的高度总和等于scrollHeight时说明滑动到了底部，此时执行加载更多操作**
 
+<!--more-->
+
 代码如下
 ```
   // 上拉加载
