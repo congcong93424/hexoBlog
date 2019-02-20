@@ -18,6 +18,7 @@ Object.getPrototypeOf(obj) 或 obj.__proto__ 来访问。
 5.在JavaScript中，所有的对象都是由它的原型对象继承而来，反之，所有的对象都可以作为原型对象存在。
 6.访问对象的属性时，JavaScript会首先在对象自身的属性内查找，若没有找到，则会跳转到该对象的原型对象中查找。
 ```
+<!--more-->
 代码如下
 ```
 <script>
