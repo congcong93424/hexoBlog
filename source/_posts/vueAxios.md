@@ -23,9 +23,10 @@ categories: vue
 > npm install axios
 
 使用cdn
-``` 
+```
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 ```
+<!--more-->
 #### EXAMPLE
 执行get请求
 ```
