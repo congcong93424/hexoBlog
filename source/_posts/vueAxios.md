@@ -18,6 +18,7 @@ categories: vue
 * 取消请求
 * 自动转换 JSON 数据
 * 客户端支持防御 XSRF
+<!--more-->
 #### 2.安装
 使用npm
 > npm install axios
@@ -26,7 +27,6 @@ categories: vue
 ```
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 ```
-<!--more-->
 #### EXAMPLE
 执行get请求
 ```
