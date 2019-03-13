@@ -72,12 +72,6 @@ DOM就是文档对象模型，在内存中是一颗树，DOM树（c++树）。�
 - 控制器（Controller）：业务逻辑
 - 模型（Model）：数据保存
 
-![](F:\截图软件图片保存\2018-07-15_155903.png)
-
-![2018-07-15_155920](F:\截图软件图片保存\2018-07-15_155920.png)
-
-![2018-07-15_155930](F:\截图软件图片保存\2018-07-15_155930.png)
-
 
 
 ### 1.1.4. **React高效的原因**
@@ -92,7 +86,6 @@ DOM就是文档对象模型，在内存中是一颗树，DOM树（c++树）。�
 
 ### 1.2.1. **效果**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B29.tmp.jpg)
 
 ### 1.2.2. **相关js库**
 
@@ -123,7 +116,6 @@ DOM就是文档对象模型，在内存中是一颗树，DOM树（c++树）。�
 
 ### 1.2.5. **使用React开发者工具调试**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B2A.tmp.png)
 
 
 
@@ -217,7 +209,7 @@ b. 参数二: 用来包含虚拟DOM元素的真实dom元素对象(一般是一�
 
 需求: 动态展示列表数据
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B3B.tmp.jpg)
+
 
 ```
 <script type="text/babel">
@@ -266,7 +258,6 @@ b. 参数二: 用来包含虚拟DOM元素的真实dom元素对象(一般是一�
 
 当应用是以多组件的方式实现, 这个应用就是一个组件化的应用
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B3C.tmp.png)
 
 
 
@@ -278,7 +269,6 @@ b. 参数二: 用来包含虚拟DOM元素的真实dom元素对象(一般是一�
 
 ### **2.1.1. 效果**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B3D.tmp.jpg)
 
 ```
 /*工厂函数创建组件*/
@@ -354,7 +344,7 @@ ReactDOM.render(<MyComponent />, document.getElementById('example1'))
 
 ### **2.2.1. 效果**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B4D.tmp.png)
+
 
 ```
 class Love extends React.Component {
@@ -430,8 +420,6 @@ class Love extends React.Component {
 ### **2.3.1. 效果**
 
 需求: *自定义用来显示一个人员信息的组件*  *1).* *姓名必须指定*  *2).* 如果性别没有指定,默认为男3). 如果年龄没有指定, 默认为18
-
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B4E.tmp.jpg)
 
 ```
 class Person extends React.Component {
@@ -569,7 +557,6 @@ static PropTypes = {
 
 
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B4F.tmp.png)
 
 ```
  class App extends React.Component {
@@ -677,7 +664,6 @@ b. 箭头函数(ES6模块化编码时才能使用通常开发中都这么用)
   1. 显示所有todo列表
   2. 输入文本, 点击按钮显示到列表的首位, 并清除输入的文本
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B60.tmp.png)
 
 ```
  //定义主组件 App
@@ -789,7 +775,6 @@ b. 交互功能(从绑定事件监听开始)
   3. 不提交表单
 
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B61.tmp.png)
 
 ```
 
@@ -885,7 +870,6 @@ class App extends React.Component {
   2. 切换持续时间为2S
   3. 点击按钮从界面中移除组件界面
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B62.tmp.png)
 
 ```
  class LifeCycle extends React.Component {
@@ -960,7 +944,6 @@ class App extends React.Component {
 
 ### **2.7.3. 生命周期流程图**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B73.tmp.jpg)
 
 ### **2.7.4. 生命周期详述**
 
@@ -1024,7 +1007,6 @@ c. 移除组件: ReactDOM.unmountComponentAtNode(containerDom)
 
 ### **2.8.1. 效果**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B74.tmp.png)
 
 
 
@@ -1063,7 +1045,6 @@ ReactDOM.render(<HelloReact/>, document.getElementById('test'))
 
 ### **2.8.2. 基本原理图**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B75.tmp.jpg)
 
 
 
@@ -1131,7 +1112,6 @@ ReactNews
 
 ### **3.2.1. 效果**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B85.tmp.png)
 
 ### **3.2.2. 拆分组件**
 
@@ -1319,7 +1299,6 @@ b. 为了兼容低版本的浏览器, 可以引入兼容库fetch.js
   3. 显示库名, 点击链接查看库
   4. 测试接口: https://api.github.com/search/repositories?q=r&sort=stars
 
-		![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B86.tmp.png)
 
 ## **4.2. axios**
 
@@ -1411,7 +1390,6 @@ fetch(url, {
 
 ### **4.4.1. 效果**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B97.tmp.png)
 
 ### **4.4.2. 拆分组件**
 
@@ -1627,8 +1605,6 @@ g. history.listen(function(location){}): 监视历史记录的变化
 
 3) 测试
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B98.tmp.png)   ![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1B99.tmp.png)
-
 
 
 ```
@@ -1713,7 +1689,6 @@ g. history.listen(function(location){}): 监视历史记录的变化
 
 ### **6.3.1. 效果**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1BA9.tmp.png)
 
 ### **6.3.2. 准备**
 
@@ -1881,7 +1856,6 @@ render(
 
 ### **6.4.1. 效果**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1BAA.tmp.png)
 
 ### **6.4.2. 二级路由组件: views/news.jsx**
 
@@ -1980,7 +1954,6 @@ export default Message;
 
 ### **6.5.1. 效果**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1BBB.tmp.png)
 
 ### **6.5.2. 三级路由组件: views/message-detail.jsx**
 
@@ -2022,7 +1995,6 @@ export default MsgDetail;
 
 ### **6.6.1. 效果**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1BBC.tmp.png)
 
 ### **6.6.2. 二级路由: views/message.jsx**
 
@@ -2056,7 +2028,6 @@ export default MsgDetail;
 
 ### **7.2.1. 效果**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1BCD.tmp.png)
 
 ### **7.2.2. 使用create-react-app创建react应用脚手架**
 
@@ -2205,11 +2176,7 @@ import {Button, Toast} from 'antd-mobile'
 
 ### **8.1.3. redux工作流程**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1BDD.tmp.jpg)
 
-![](C:\Users\Administrator\Desktop\小熊node\day19感冒真几把难受，讲了小熊说很难的redux。也还好就是比较绕，注意手动画图搞清楚各个模块的连接\redux的工作原理.png)
-
-![](F:\截图软件图片保存\2018-07-16_095543.png)
 
 
 
@@ -2430,7 +2397,6 @@ b. **不要修改原来的状态**
 
 ### **8.4.1. 效果**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1BDE.tmp.png)
 
 ### **8.4.2. 下载依赖包**
 
@@ -2894,7 +2860,6 @@ export default connect(
 
 ### **8.7.1. 安装chrome浏览器插件**
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wps1BEF.tmp.png)
 
 ### **8.7.2. 下载工具依赖包**
 
