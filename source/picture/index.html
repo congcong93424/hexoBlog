@@ -1,116 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-    <title>Document</title>
-    <style>
-        .pic_list{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        img{
-            width: 16vw;
-            border-radius: 10px;
-            box-shadow: 2px 2px 2px gray;
-            border: none !important;
-            padding: 0 !important;
-        }
 
-        a{
-            border: none !important;
-        }
-        .page{
-            margin-top: 20px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .page span{
-            display: inline-block;
-            width: 70px;
-            height: 30px;
-            border: 1px solid gray;
-            cursor: pointer;
-            text-align: center;
-            line-height: 30px;
-        }
-        .page span:first-of-type{
-            margin-right: 10px;
-        }
-        .page span:hover{
-            background: rgb(243, 238, 238);
-        }
-        @media screen and (max-width: 950px){
-            img{
-                width: 40vw;
-                border-radius: 10px;
-                box-shadow: 2px 2px 2px gray;
-                border: none !important;
-                padding: 0 !important;
-            }
-        }
-    </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    .pic_list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    img {
+      width: 16vw;
+      border-radius: 10px;
+      box-shadow: 2px 2px 2px gray;
+      border: none !important;
+      padding: 0 !important;
+    }
+
+    a {
+      border: none !important;
+    }
+
+    .page {
+      margin-top: 20px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .page span {
+      display: inline-block;
+      width: 70px;
+      height: 30px;
+      border: 1px solid gray;
+      cursor: pointer;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    .page span:first-of-type {
+      margin-right: 10px;
+    }
+
+    .page span:hover {
+      background: rgb(243, 238, 238);
+    }
+
+    @media screen and (max-width: 950px) {
+      img {
+        width: 40vw;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px gray;
+        border: none !important;
+        padding: 0 !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div>
-        <h1 style="font-family:'华文行楷';text-align: center;font-size: 32px;">这里是图片的展示，仅用于观赏</h1>
-        <hr>
-        <div class="pic">
-            <div class="pic_list"></div>
-        </div>
-        <div class="pages">
-            <strong class="allPic"></strong>
-            <strong class="allPageNum"></strong> &nbsp;&nbsp;
-            <span class="pre">首页</span>
-            <span class="next">下一页</span>
-        </div>
+  <div>
+    <h1 style="font-family:'华文行楷';text-align: center;font-size: 32px;">这里是图片的展示，仅用于观赏</h1>
+    <hr>
+    <div class="pic">
+      <div class="pic_list"></div>
     </div>
-    
+    <div class="pages">
+      <strong class="allPic"></strong>
+      <strong class="allPageNum"></strong> &nbsp;&nbsp;
+      <span class="pre">首页</span>
+      <span class="next">下一页</span>
+    </div>
+  </div>
+
 </body>
+
 </html>
 <script>
-    var pre =document.getElementsByClassName('pre')[0]
-    var next = document.getElementsByClassName('next')[0]
-    let pageNum = 1
+  var pre = document.getElementsByClassName('pre')[0]
+  var next = document.getElementsByClassName('next')[0]
+  let pageNum = 1
+  changePage(pageNum)
+  pre.addEventListener("click", function() {
+    pageNum = 1
+    changePage(pageNum, "false")
+  })
+  next.addEventListener("click", function() {
+    pageNum++
     changePage(pageNum)
-    pre.addEventListener("click",function(){
-        pageNum = 1
-        changePage(pageNum,"false")
-    })
-    next.addEventListener("click",function(){
-        pageNum++
-        changePage(pageNum)
-    })
+  })
 
-    function changePage(pageNum,bol){
-        if(bol == "false"){
-            var childs = document.getElementsByClassName('pic_list')[0]
-            while(childs.lastChild){
-                childs.removeChild(childs.lastChild)
-            }
-        }
-        let i;
-        for(i=(pageNum-1)*9;i<pageNum*9;i++){
-            var allPic = document.getElementsByClassName('allPic')[0]
-            var allPageNum = document.getElementsByClassName('allPageNum')[0]
-            document.getElementsByClassName('allPic')[0].innerHTML = `总 ${i+1} 张图片`
-            document.getElementsByClassName('allPageNum')[0].innerHTML = `第 ${pageNum} 页`
-            var para=document.createElement("img");
-            var a = document.createElement("a")
-            a.setAttribute("href",`https://bing.ioliu.cn/v1?d=${i+1}&w=1366&h=768`)
-            a.setAttribute("class","fancybox fancybox.image")
-            a.setAttribute("ref","group")
-            a.setAttribute("rel","group")
-            para.setAttribute("src",`https://bing.ioliu.cn/v1?d=${i+1}&w=1366&h=768`)
-            a.appendChild(para)
-            document.getElementsByClassName('pic_list')[0].appendChild(a)
-        }
-        
+  function changePage(pageNum, bol) {
+    if (bol == "false") {
+      var childs = document.getElementsByClassName('pic_list')[0]
+      while (childs.lastChild) {
+        childs.removeChild(childs.lastChild)
+      }
     }
-    
+    let i;
+    for (i = (pageNum - 1) * 9; i < pageNum * 9; i++) {
+      var allPic = document.getElementsByClassName('allPic')[0]
+      var allPageNum = document.getElementsByClassName('allPageNum')[0]
+      document.getElementsByClassName('allPic')[0].innerHTML = `总 ${i+1} 张图片`
+      document.getElementsByClassName('allPageNum')[0].innerHTML = `第 ${pageNum} 页`
+      var para = document.createElement("img");
+      var a = document.createElement("a")
+      a.setAttribute("href", `https://bing.ioliu.cn/v1?d=${i+1}&w=1366&h=768`)
+      a.setAttribute("class", "fancybox fancybox.image")
+      a.setAttribute("ref", "group")
+      a.setAttribute("rel", "group")
+      para.setAttribute("src", `https://bing.ioliu.cn/v1?d=${i+1}&w=1366&h=768`)
+      a.appendChild(para)
+      document.getElementsByClassName('pic_list')[0].appendChild(a)
+    }
 
+  }
 </script>
